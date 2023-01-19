@@ -60,11 +60,12 @@ while(True):
     print()
     position = input("Enter a number between 1-9? ")
     print()
-    
+
     if (turn==" x "):
         xScore = xScore+1
     elif(turn==" o "):
         oScore = oScore+1
+
     if(not position.isnumeric()):
         print("Invalid input.")
         print()
@@ -82,6 +83,8 @@ while(True):
     board[position] = turn
     showboard()
 
+    print("")
+    print("Final Score")
     print("")
     print("-------------")
     print(f" X = {xScore}")

@@ -46,6 +46,8 @@ showboard()
 print()
 
 turn = " x "
+xScore = 0
+oScore = 0
 
 def switchturn(turn):
     if(turn==" x "):
@@ -58,6 +60,11 @@ while(True):
     print()
     position = input("Enter a number between 1-9? ")
     print()
+    
+    if (turn==" x "):
+        xScore = xScore+1
+    elif(turn==" o "):
+        oScore = oScore+1
     if(not position.isnumeric()):
         print("Invalid input.")
         print()
@@ -71,9 +78,17 @@ while(True):
         print("Position is already taken.")
         print()
         continue
+
     board[position] = turn
     showboard()
-    print()
+
+    print("")
+    print("-------------")
+    print(f" X = {xScore}")
+    print(f" O = {oScore}")
+    print("-------------")
+    print("")
+
     if(checkwinner(turn)):
         print(f"Winner: {turn}")
         break
